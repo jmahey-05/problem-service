@@ -1,20 +1,15 @@
 import express from 'express';
 
-import { ProblemController } from '../../controllers/index.js';
+import { problemController } from '../../controllers/index.js';
 
-const ProblemRouter = express.Router();
+const problemRouter = express.Router();
 
-ProblemRouter.get('/ping',ProblemController.pingProblemController);
+problemRouter.get('/ping',problemController.pingProblemController);
+problemRouter.get('/:id', problemController.getProblem);
+problemRouter.get('/', problemController.getProblems);
+problemRouter.post('/', problemController.addProblem);
+problemRouter.delete('/:id', problemController.deleteProblem);
+problemRouter.put('/:id',problemController.updateProblem);
 
-ProblemRouter.get('/:id', ProblemController.getProblem);
-
-ProblemRouter.get('/', ProblemController.getProblems);
-
-ProblemRouter.post('/', ProblemController.addProblem);
-
-ProblemRouter.delete('/:id', ProblemController.deleteProblem);
-
-ProblemRouter.put('/:id',ProblemController.updateProblem);
-
-export { ProblemRouter };
+export { problemRouter };
 

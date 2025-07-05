@@ -1,9 +1,9 @@
 import express from 'express';
 
-import { ProblemRouter } from './problems.routes.js';
+import { problemRouter } from './problems.routes.js';
 
 const v1Router = express.Router();
 
-v1Router.use('/problems',ProblemRouter);
+v1Router.use('/problems',problemRouter);
 
 export {v1Router};

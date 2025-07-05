@@ -1,5 +1,5 @@
-import * as ProblemController from './problem.controller.js';
+import * as problemController from './problem.controller.js';
 
 export {
-    ProblemController
+    problemController
 };
