@@ -14,7 +14,7 @@ export const addProblem = (req, res, next)=>{
     }
 }
 
-export const getProblem = (req, res) =>{
+export const getProblem = (req, res, next) =>{
     try{
         // nothing implemented
         throw new NotImplemented('getProblem');
@@ -23,7 +23,7 @@ export const getProblem = (req, res) =>{
     }
 }
 
-export const getProblems = (req, res) => {
+export const getProblems = (req, res, next) => {
     try{
         // nothing implemented
         throw new NotImplemented('getProblems');
@@ -32,7 +32,7 @@ export const getProblems = (req, res) => {
     }
 }
 
-export const deleteProblem = (req,res) => {
+export const deleteProblem = (req,res, next) => {
     try{
         // nothing implemented
         throw new NotImplemented('deleteProblem');
@@ -41,7 +41,7 @@ export const deleteProblem = (req,res) => {
     }
 }
 
-export const updateProblem = (req, res) => {
+export const updateProblem = (req, res, next) => {
     try{
         // nothing implemented
         throw new NotImplemented('updateProblem');
