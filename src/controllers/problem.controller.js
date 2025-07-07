@@ -11,7 +11,6 @@ export const pingProblemController = (req, res) =>{
 
 export const addProblem = async (req, res, next)=>{
     try{
-        console.log("incoming request body", req.body);
         const newproblem = await problemService.createProblem(req.body)
         return res.status(StatusCodes.CREATED).json({
             success: true,
@@ -24,10 +23,15 @@ export const addProblem = async (req, res, next)=>{
     }
 }
 
-export const getProblem = (req, res, next) =>{
+export const getProblem = async(req, res, next) =>{
     try{
-        // nothing implemented
-        throw new NotImplemented('getProblem');
+        const problem = await problemService.getProblem(req.params.id);
+        return res.status(StatusCodes.OK).json({
+            success: true,
+            message: "Successfully fetched the problem",
+            error: {},
+            data: problem
+        })
     }catch(error){
         next(error);
     }
