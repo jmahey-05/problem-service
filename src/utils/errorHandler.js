@@ -11,7 +11,7 @@ export const errorHandler = (err, req, res, next) => {
         })
     }
 
-    return res.statusCodes(StatusCodes.INTERNAL_SERVER_ERROR).json({
+    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
         success: false,
         message: 'Something went wrong',
         error: err,
