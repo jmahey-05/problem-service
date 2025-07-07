@@ -33,13 +33,18 @@ export const getProblem = (req, res, next) =>{
     }
 }
 
-export const getProblems = (req, res, next) => {
+export const getProblems = async (req, res, next) => {
     try{
-        // nothing implemented
-        throw new NotImplemented('getProblems');
+        const response = await problemService.getAllProblems();
+        return res.status(StatusCodes.OK).json({
+            success: true,
+            message: 'Successfully fetched all the problems',
+            error: {},
+            data: response
+        })
     }catch(error){
         next(error);
-    }
+    } 
 }
 
 export const deleteProblem = (req,res, next) => {
