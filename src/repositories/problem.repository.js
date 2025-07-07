@@ -55,4 +55,16 @@ export class ProblemRepository{
         }
     }
 
+    async updateProblem(id, updatedData){
+        try{
+            const problem = await Problem.findByIdAndUpdate(id, updatedData, {new: true});
+            if(!problem){
+                throw new NotFound("Problem", id);
+            }
+            return problem;
+        }catch(error){
+            console.log(error);
+            throw error;
+        }
+    }
 }
