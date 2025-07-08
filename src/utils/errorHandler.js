@@ -1,3 +1,4 @@
+import { logger } from "../config/logger.config.js"
 import { BaseError } from "../errors/base.error.js"
 import { StatusCodes } from "http-status-codes"
 
@@ -11,6 +12,7 @@ export const errorHandler = (err, req, res, next) => {
         })
     }
 
+    logger.error('Something wen wrong');
     return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
         success: false,
         message: 'Something went wrong',
