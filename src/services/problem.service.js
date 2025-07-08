@@ -38,5 +38,25 @@ export class ProblemService{
             throw error;
         }
     }
+
+    async deleteProblem(problemId){
+        try {
+            const problem = await this.problemRepository.deleteProblem(problemId);
+            return problem;
+        } catch (error) {
+            console.log(error);
+            throw error;
+        }
+    }
+
+    async updateProblem(problemId, updatedData){
+        try {
+            const problem = await this.problemRepository.updateProblem(problemId, updatedData);
+            return problem;
+        } catch (error) {
+            console.log(error);
+            throw error;
+        }
+    }
 }
 
